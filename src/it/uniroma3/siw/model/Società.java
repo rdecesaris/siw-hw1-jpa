@@ -4,7 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
-public class Societ‡ {
+public class Societ√† {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,14 +14,13 @@ public class Societ‡ {
 	private int numeroTelefono;
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-	/* L'Indirizzo dipende direttamente dalla Societ‡: se rendiamo persistente una Societ‡ renderemo persistente anche il suo Indirizzo
-	 * Questo ragionamento non vale per la rimozione dal DB perchË Indirizzo potrebbe essere associato a pi˘ Societ‡ */
+	/* L'Indirizzo dipende direttamente dalla Societ√†: se rendiamo persistente una Societ√† renderemo persistente anche il suo Indirizzo
+	 * Questo ragionamento non vale per la rimozione dal DB perch√® Indirizzo potrebbe essere associato a pi√π Societ√† */
 	private Indirizzo indirizzo;
 	
-	protected Societ‡() {}
+	protected Societ√†() {}
 	
-	public Societ‡(String ragioneSociale, int numeroTelefono) {
-		super();
+	public Societ√†(String ragioneSociale, int numeroTelefono) {
 		this.ragioneSociale = ragioneSociale;
 		this.numeroTelefono = numeroTelefono;
 	}
@@ -57,7 +56,7 @@ public class Societ‡ {
 
 	@Override
 	public boolean equals(Object obj) {
-		Societ‡ that = (Societ‡) obj;
+		Societ√† that = (Societ√†) obj;
 		return this.getRagioneSociale().equals(that.getRagioneSociale());
 	}
 }
