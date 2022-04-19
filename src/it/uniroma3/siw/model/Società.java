@@ -13,9 +13,9 @@ public class Società {
 	private String ragioneSociale;
 	private int numeroTelefono;
 	
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	/* L'Indirizzo dipende direttamente dalla Società: se rendiamo persistente una Società renderemo persistente anche il suo Indirizzo
-	 * Questo ragionamento non vale per la rimozione dal DB perchè Indirizzo potrebbe essere associato a più Società */
+	 * Il ragionamento vale anche per la rimozione dal DB perchè è un'Associazione "Uno-a-Uno" */
 	private Indirizzo indirizzo;
 	
 	protected Società() {}
