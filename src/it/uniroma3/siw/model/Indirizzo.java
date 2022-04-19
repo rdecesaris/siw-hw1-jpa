@@ -18,7 +18,6 @@ public class Indirizzo {
 	protected Indirizzo() {}
 	
 	public Indirizzo(String nomeVia, int numeroCivico, String comune, int cap, String provicia) {
-		super();
 		this.nomeVia = nomeVia;
 		this.numeroCivico = numeroCivico;
 		this.comune = comune;
