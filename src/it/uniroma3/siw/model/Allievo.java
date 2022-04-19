@@ -18,9 +18,9 @@ public class Allievo {
 	private String matricola;
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST})
-	/* Se rendiamo persistente un Allievo renderemo persistente anche la Societ‡ a cui Ë associato 
-	 * Questo ragionamento non vale per la rimozione dal DB, perchË una Societ‡ potrebbe essere associata a pi˘ Allievi */
-	private Societ‡ societ‡;
+	/* Se rendiamo persistente un Allievo renderemo persistente anche la Societ√† a cui √® associato 
+	 * Questo ragionamento non vale per la rimozione dal DB, perch√® una Societ√† potrebbe essere associata a pi√π Allievi */
+	private Societ√† societ√†;
 	
 	@ManyToMany(mappedBy = "allievi")
 	private List<Corso> corsi;
@@ -29,7 +29,6 @@ public class Allievo {
 	
 	public Allievo(String nome, String cognome, LocalDate dataNascita, String luogoNascita, String email,
 			String matricola) {
-		super();
 		this.nome = nome;
 		this.cognome = cognome;
 		this.dataNascita = dataNascita;
@@ -86,12 +85,12 @@ public class Allievo {
 		this.matricola = matricola;
 	}
 
-	public Societ‡ getSociet‡() {
-		return societ‡;
+	public Societ√† getSociet√†() {
+		return societ√†;
 	}
 
-	public void setSociet‡(Societ‡ societ‡) {
-		this.societ‡ = societ‡;
+	public void setSociet√†(Societ√† societ√†) {
+		this.societ√† = societ√†;
 	}
 
 	public List<Corso> getCorsi() {
@@ -112,5 +111,4 @@ public class Allievo {
 		Allievo that = (Allievo) obj;
 		return this.getMatricola().equals(that.getMatricola());
 	}
-
 }
