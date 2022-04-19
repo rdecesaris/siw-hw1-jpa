@@ -22,7 +22,6 @@ public class Docente {
 	protected Docente() {}
 	
 	public Docente(String nome, String cognome, LocalDate dataNascita, String luogoNascita, String partitaIVA) {
-		super();
 		this.nome = nome;
 		this.cognome = cognome;
 		this.dataNascita = dataNascita;
@@ -86,6 +85,6 @@ public class Docente {
 	@Override
 	public boolean equals(Object obj) {
 		Docente that = (Docente) obj;
-		return (this.getNome().equals(that.getNome()) && this.getCognome().equals(that.getCognome()) && this.getPartitaIVA().equals(that.getPartitaIVA()));
+		return this.getPartitaIVA().equals(that.getPartitaIVA()));
 	}
 }
