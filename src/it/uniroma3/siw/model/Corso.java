@@ -19,13 +19,12 @@ public class Corso {
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST})
 	/* Il Docente dipende direttamente dal Corso: se aggiungiamo un Corso aggiungiamo anche il suo Docente
-	 * Questo ragionamento non vale per la rimozione dal DB perchè un Docente potrebbe essere associato a più Corsi */
+	 * Questo ragionamento non vale per la rimozione dal DB perchÃ¨ un Docente potrebbe essere associato a piÃ¹ Corsi */
 	private Docente docente;
 	
 	protected Corso() {}
 	
 	public Corso(String nome, LocalDate dataInizio, int durataInMesi) {
-		super();
 		this.nome = nome;
 		this.dataInizio = dataInizio;
 		this.durataInMesi = durataInMesi;
