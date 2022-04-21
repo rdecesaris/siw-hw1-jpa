@@ -22,12 +22,15 @@ public class Corso {
 	 * Questo ragionamento non vale per la rimozione dal DB perchè un Docente potrebbe essere associato a più Corsi */
 	private Docente docente;
 	
-	protected Corso() {}
+	public Corso() {
+		this.allievi = new ArrayList<Allievo>();
+	}
 	
 	public Corso(String nome, LocalDate dataInizio, int durataInMesi) {
 		this.nome = nome;
 		this.dataInizio = dataInizio;
 		this.durataInMesi = durataInMesi;
+		this.allievi = new ArrayList<Allievo>();
 	}
 
 	public String getNome() {
