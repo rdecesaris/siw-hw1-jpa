@@ -15,6 +15,7 @@ public class Allievo {
 	private LocalDate dataNascita;
 	private String luogoNascita;
 	private String email;
+	@Column(unique = true, nullable = false)
 	private String matricola;
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST})
