@@ -19,7 +19,7 @@ public class Società {
 	 * Il ragionamento vale anche per la rimozione dal DB perchè è un'Associazione "Uno-a-Uno" */
 	private Indirizzo indirizzo;
 	
-	protected Società() {}
+	public Società() {}
 	
 	public Società(String ragioneSociale, int numeroTelefono) {
 		this.ragioneSociale = ragioneSociale;
