@@ -89,6 +89,6 @@ public class Docente {
 	@Override
 	public boolean equals(Object obj) {
 		Docente that = (Docente) obj;
-		return this.getPartitaIVA().equals(that.getPartitaIVA()));
+		return this.getPartitaIVA().equals(that.getPartitaIVA());
 	}
 }

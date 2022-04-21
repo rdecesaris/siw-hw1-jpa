@@ -21,7 +21,7 @@ public class Allievo {
 	@ManyToOne(cascade = {CascadeType.PERSIST})
 	/* Se rendiamo persistente un Allievo renderemo persistente anche la Società a cui è associato 
 	 * Questo ragionamento non vale per la rimozione dal DB, perchè una Società potrebbe essere associata a più Allievi */
-	private Società società;
+	private Societa societa;
 	
 	@ManyToMany(mappedBy = "allievi")
 	private List<Corso> corsi;
@@ -89,12 +89,12 @@ public class Allievo {
 		this.matricola = matricola;
 	}
 
-	public Società getSocietà() {
-		return società;
+	public Societa getSocieta() {
+		return societa;
 	}
 
-	public void setSocietà(Società società) {
-		this.società = società;
+	public void setSocieta (Societa societa) {
+		this.societa = societa;
 	}
 
 	public List<Corso> getCorsi() {
