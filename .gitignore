@@ -83,3 +83,4 @@ disk/*
 repository/*
 sqliteDb.db
 testdb.db
+src/META-INF/persistence.xml
