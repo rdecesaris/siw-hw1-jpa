@@ -14,12 +14,15 @@ public class Docente {
 	private String cognome;
 	private LocalDate dataNascita;
 	private String luogoNascita;
+	@Column(unique = true, nullable = false)
 	private String partitaIVA;
 	
 	@OneToMany(mappedBy = "docente")
 	private List<Corso> corsi;
 	
-	protected Docente() {}
+	public Docente() {
+		this.corsi = new ArrayList<Corso>();
+	}
 	
 	public Docente(String nome, String cognome, LocalDate dataNascita, String luogoNascita, String partitaIVA) {
 		this.nome = nome;
@@ -27,6 +30,7 @@ public class Docente {
 		this.dataNascita = dataNascita;
 		this.luogoNascita = luogoNascita;
 		this.partitaIVA = partitaIVA;
+		this.corsi = new ArrayList<Corso>();
 	}
 
 	public String getNome() {
