@@ -10,14 +10,14 @@ public class Indirizzo {
 	private Long id;
 	
 	private String nomeVia;
-	private int numeroCivico;
+	private String numeroCivico;
 	private String comune;
-	private int cap;
+	private String cap;
 	private String provincia;
 	
-	protected Indirizzo() {}
+	public Indirizzo() {}
 	
-	public Indirizzo(String nomeVia, int numeroCivico, String comune, int cap, String provicia) {
+	public Indirizzo(String nomeVia, String numeroCivico, String comune, String cap, String provicia) {
 		this.nomeVia = nomeVia;
 		this.numeroCivico = numeroCivico;
 		this.comune = comune;
@@ -33,11 +33,11 @@ public class Indirizzo {
 		this.nomeVia = nomeVia;
 	}
 
-	public int getNumeroCivico() {
+	public String getNumeroCivico() {
 		return numeroCivico;
 	}
 
-	public void setNumeroCivico(int numeroCivico) {
+	public void setNumeroCivico(String numeroCivico) {
 		this.numeroCivico = numeroCivico;
 	}
 
@@ -49,11 +49,11 @@ public class Indirizzo {
 		this.comune = comune;
 	}
 
-	public int getCap() {
+	public String getCap() {
 		return cap;
 	}
 
-	public void setCap(int cap) {
+	public void setCap(String cap) {
 		this.cap = cap;
 	}
 
@@ -67,12 +67,12 @@ public class Indirizzo {
 
 	@Override
 	public int hashCode() {
-		return this.getCap() + this.getNumeroCivico() + this.getNomeVia().hashCode();
+		return this.getCap().hashCode() + this.getNumeroCivico().hashCode() + this.getNomeVia().hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		Indirizzo that = (Indirizzo) obj;
-		return this.cap == that.getCap() && this.getNomeVia().equals(that.getNomeVia()) && this.numeroCivico == that.getNumeroCivico();
+		return this.cap.equals(that.getCap()) && this.getNomeVia().equals(that.getNomeVia()) && this.numeroCivico.equals(that.getNumeroCivico());
 	}
 }
