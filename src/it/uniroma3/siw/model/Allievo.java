@@ -26,7 +26,9 @@ public class Allievo {
 	@ManyToMany(mappedBy = "allievi")
 	private List<Corso> corsi;
 	
-	protected Allievo() {}
+	public Allievo() {
+		this.corsi = new ArrayList<Corso>();
+	}
 	
 	public Allievo(String nome, String cognome, LocalDate dataNascita, String luogoNascita, String email,
 			String matricola) {
@@ -36,6 +38,7 @@ public class Allievo {
 		this.luogoNascita = luogoNascita;
 		this.email = email;
 		this.matricola = matricola;
+		this.corsi = new ArrayList<Corso>();
 	}
 
 	public String getNome() {
